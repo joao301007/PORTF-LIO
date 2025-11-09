@@ -1,0 +1,578 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.light-mode {
+    background-color: #B7DEA2;
+    color: #000;
+}
+
+.dark-mode {
+    background-color: #144b14;
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #B7DEA2;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-bottom: 1px solid #ccc;
+}
+.foto{
+    width: 500px; 
+    height: 500px; 
+    border-radius: 50%;
+    overflow: hidden;
+    
+  }
+
+body.light-mode header {
+    border-bottom: 1px solid #333
+}
+
+ul {
+    display: flex;
+    position: relative;
+    gap: 25px;
+  }
+  
+  ul li {
+    position: relative;
+    list-style: none;
+    width: 60px;
+    height: 60px;
+    background: #144b14;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  body.light-mode ul li {
+    background: #B7DEA2;
+  }
+
+  ul li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 60px;
+    background: #B7DEA2;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  
+  body.light-mode ul li::before {
+    background: #144b14;
+  }
+
+  ul li::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background: #B7DEA2;
+    transition: 0.5s;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+  }
+  body.light-mode ul li::after {
+    background: #144b14;
+  }
+
+  
+  ul li:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+  }
+  
+  ul li:hover::before {
+    opacity: 1;
+  }
+  
+  ul li:hover::after {
+    opacity: 0.5;
+  }
+  
+  ul li svg {
+    margin-top: 5px;
+    opacity: 0.7;
+    font-size: 1.75em;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+  }
+  
+  ul li:hover svg {
+    transform: scale(0);
+    transition-delay: 0s;
+  }
+  
+  ul li span {
+    position: absolute;
+  }
+  
+  ul li .title {
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+  }
+  
+  ul li:hover .title {
+    transform: scale(1);
+    transition-delay: 0.25s;
+  }
+
+  ul li .title a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+#toggleTheme {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-left: 20px;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s;
+}
+
+body.light-mode #toggleTheme {
+    border: 2px solid #000;
+}
+
+#themeIcon {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+/* MUDA A COR DO ICONE DE TROCAR DE TEMA */
+body.light-mode #themeIcon {
+    filter: grayscale(1) brightness(0);
+}
+
+
+.hero-section {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+
+.intro {
+    margin-top: 100px;
+}
+.intro p:first-child {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.intro h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.intro strong {
+    font-weight: 800;
+}
+
+.intro .role { 
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+.avatar {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body.light-mode .icon-avatar {
+    stroke: #000;
+}
+
+.icon-avatar {
+    width: 100%;
+    height: 100%;
+    stroke: #fff;
+}
+.section-container {
+    margin: 40px auto;
+    padding: 60px 40px;
+}
+
+/* Títulos de Seção (h2) */
+.section-container h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #ccc; 
+    width: fit-content; 
+    line-height: 1.5; 
+}
+
+body.light-mode .section-container h2 {
+    border-bottom: 3px solid #333;
+}
+
+#sobre-mim p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: justify; 
+}
+
+
+#habilidades {
+    text-align: center; 
+}
+
+.habilidades {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    margin: 40px 0 60px 0;
+    flex-wrap: wrap; 
+}
+
+.habilidades-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skill-icon {
+    object-fit: contain; 
+    transition: transform 0.3s;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1);
+}
+
+.skills-description {
+    max-width: 850px; /* Limita a largura do parágrafo */
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Estilos para a Seção Projetos */
+
+#projetos {
+    text-align: center; 
+}
+
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 100px; 
+    margin: 40px 0;
+    flex-wrap: wrap; 
+}
+
+.project-item {
+    margin-top: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: scale(1.05);
+}
+
+body.light-mode .project-icon {
+    filter: invert(0);
+}
+.project-icon {
+    width: 150px; 
+    height: auto;
+    object-fit: contain;
+    filter: invert(100%);
+}
+
+/* Seção Contato */
+
+#contato {
+    padding-bottom: 80px;
+}
+
+.contact-flex-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.contact-info-block,
+.contact-form {
+    flex: 1; 
+}
+
+/* Estilos da Lista de Contato */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 0;
+}
+
+.contact-item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: opacity 0.3s;
+}
+
+body.light-mode .contact-item a {
+    color: #000;
+}
+
+.contact-icon {
+    margin-top: 20px;
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+    filter: invert(100%);
+}
+
+body.light-mode .contact-icon {
+    filter: invert(0);
+}
+
+.contact-info {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+
+/* Estilos do Formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #B7DEA2; 
+    background-color: transparent;
+    color: #fff; 
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    resize: vertical;
+}
+
+/* Foco no Dark Mode (usando o #B7DEA2 para a borda como destaque) */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #B7DEA2;
+    outline: none;
+}
+
+/* Botão no Dark Mode */
+.submit-button {
+    background-color: #B7DEA2;
+    color: #000; 
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+/* Sobrescreve a borda, fundo e texto para o Light Mode (cores escuras) */
+body.light-mode .contact-form input[type="text"],
+body.light-mode .contact-form input[type="email"],
+body.light-mode .contact-form textarea {
+    border: 1px solid #333;
+    background-color: transparent;
+    color: #000;
+}
+
+/* Foco no Light Mode (usando o #2a3a2a para a borda como destaque) */
+body.light-mode .contact-form input:focus,
+body.light-mode .contact-form textarea:focus {
+    border-color: #2a3a2a;
+    outline: none;
+}
+
+
+/* Botão no Light Mode */
+body.light-mode .submit-button {
+    background-color: #2a3a2a;
+    color: #ccc;
+}
+
+footer {
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+body.light-mode footer {
+    color: #000;
+}
+
+
+
+
+
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .avatar {
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .intro h1 {
+        font-size: 48px;
+    }
+
+    .intro .role {
+        font-size: 24px;
+    }
+}
+
+/* Media Queries para Responsividade (Atualização) */
+@media (max-width: 768px) {
+    /* ... (Mantenha o Media Query anterior) ... */
+    
+    .section-container {
+        padding: 40px 20px;
+    }
+
+    .section-container h2 {
+        font-size: 30px;
+    }
+
+    #sobre-mim p {
+        font-size: 16px;
+    }
+}
+
+/* Media Queries para Responsividade (Atualização) */
+@media (max-width: 768px) {
+    /* ... (Mantenha os estilos anteriores) ... */
+    
+    .skills-grid {
+        gap: 30px;
+        margin: 30px 0 40px 0;
+    }
+
+    .skill-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .skills-description {
+        font-size: 16px;
+        text-align: left; /* No mobile, justificado pode ficar ruim */
+    }
+}
+
+/* Media Queries para Responsividade (Atualização) */
+@media (max-width: 768px) {
+    /* ... (Mantenha os estilos anteriores) ... */
+    
+    .projects-grid {
+        gap: 20px;
+    }
+
+    .project-icon {
+        width: 100px; /* Reduz o tamanho das pastas no mobile */
+    }
+}
+
+/* Media Queries para Responsividade da seção Contato */
+@media (max-width: 768px) {
+    /* Faz com que o layout volte a ser de bloco no mobile */
+    .contact-flex-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-info {
+        font-size: 18px;
+    }
+
+    .contact-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 15px;
+    }
+}
