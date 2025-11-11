@@ -5,21 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     
-    const sunIconPath = './assets/sun.png';
-    const moonIconPath = './assets/moon.png';
+    const sunIconPath = 'https://joao301007.github.io/PORTF-LIO/assets/sun.png';
+    const moonIconPath = 'https://joao301007.github.io/PORTF-LIO/assets/moon.png';
 
     function applyTheme(theme) {
         if (theme === 'dark') {
             body.classList.remove('light-mode');
             body.classList.add('dark-mode');
             
-            themeIcon.src = "./assets/sun.png";
+            themeIcon.src = "https://joao301007.github.io/PORTF-LIO/assets/sun.png";
             themeIcon.alt = 'Ícone do Sol para ativar o modo claro';
         } else {
             body.classList.remove('dark-mode');
             body.classList.add('light-mode');
          
-            themeIcon.src = "./assets/moon.png";
+            themeIcon.src = "https://joao301007.github.io/PORTF-LIO/assets/moon.png";
             themeIcon.alt = 'Ícone da Lua para ativar o modo escuro';
         }
     }
@@ -40,3 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
